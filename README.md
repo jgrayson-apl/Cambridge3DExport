@@ -38,7 +38,7 @@ Update the parameters in ./config/application.json file in your favorite json ed
 |  **shareable** | List of shareable properties                                      |
 
 
-#### Embed
+#### Embed application in other site
 This application supports a URL parameter called ***embedded*** that will:
 
 * hide the top header
