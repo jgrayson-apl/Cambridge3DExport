@@ -1,0 +1,29 @@
+<p>
+    <span style="font-size:18px;"><strong>Building Models:</strong></span>&nbsp;
+    <br>
+    <a target="_blank" rel="noopener noreferrer" href="https://cambmagisdata.blob.core.windows.net/camb3d2022/CAMB3D_{grid_col}{grid_row}_SKP_Buildings_skp.zip">SketchUp SKP</a> <span style="font-size:14px;"><i>(</i></span><a target="_blank" rel="noopener noreferrer" href="https://www.cambridgema.gov/GIS/3D/3ddata/sketchupskp"><span style="font-size:14px;"><i>Metadata</i></span></a><span style="font-size:14px;"><i>)</i></span>&nbsp;
+    <br>
+    <a target="_blank" rel="noopener noreferrer" href="https://cambmagisdata.blob.core.windows.net/camb3d2022/CAMB3D_{grid_col}{grid_row}_OBJ_Buildings_obj.zip">OBJ</a> <span style="font-size:14px;"><i>(</i></span><a target="_blank" rel="noopener noreferrer" href="https://www.cambridgema.gov/GIS/3D/3ddata/objwavefrontobject"><span style="font-size:14px;"><i>Metadata</i></span></a><span style="font-size:14px;"><i>)</i></span>&nbsp;
+    <br>
+    <a target="_blank" rel="noopener noreferrer" href="https://cambmagisdata.blob.core.windows.net/camb3d2022/CAMB3D_{grid_col}{grid_row}_FBX_Buildings_fbx.zip">FBX</a> <span style="font-size:14px;"><i>(</i></span><a target="_blank" rel="noopener noreferrer" href="https://www.cambridgema.gov/GIS/3D/3ddata/FBX"><span style="font-size:14px;"><i>Metadata</i></span></a><span style="font-size:14px;"><i>)</i></span>&nbsp;
+    <br>
+    <a target="_blank" rel="noopener noreferrer" href="https://cambmagisdata.blob.core.windows.net/camb3d2022/CAMB3D_{grid_col}{grid_row}_GLTF_Buildings.gltf.zip">GLTF</a> <span style="font-size:14px;"><i>(</i></span><a target="_blank" rel="noopener noreferrer" href="https://www.cambridgema.gov/GIS/3D/3ddata/GLTF"><span style="font-size:14px;"><i>Metadata</i></span></a><span style="font-size:14px;"><i>)</i></span>&nbsp;
+    <br>
+    <br>
+    <span style="font-size:18px;"><strong>Ground Plans:</strong></span>&nbsp;
+    <br>
+    <a target="_blank" rel="noopener noreferrer" href="https://cambmagisdata.blob.core.windows.net/camb3d2022/CAMB3D_{grid_col}{grid_row}_DXF_Groundplan_dxf.zip">Ground Plan DXF</a> <span style="font-size:14px;"><i>(</i></span><a target="_blank" rel="noopener noreferrer" href="https://www.cambridgema.gov/GIS/3D/3ddata/groundplandxf"><span style="font-size:14px;"><i>Metadata</i></span></a><span style="font-size:14px;"><i>)</i></span>&nbsp;
+    <br>
+    <a target="_blank" rel="noopener noreferrer" href="https://cambmagisdata.blob.core.windows.net/camb3d2022/CAMB3D_{grid_col}{grid_row}_PNG_GroundPlan.png">Ground Plan PNG</a> <span style="font-size:14px;"><i>(</i></span><a target="_blank" rel="noopener noreferrer" href="https://www.cambridgema.gov/GIS/3D/3ddata/groundplanpng"><span style="font-size:14px;"><i>Metadata</i></span></a><span style="font-size:14px;"><i>)</i></span>&nbsp;
+    <br>
+    <a target="_blank" rel="noopener noreferrer" href="https://cambmagisdata.blob.core.windows.net/camb3d2022/CAMB3D_{grid_col}{grid_row}_JPG_2021Ortho_jpg.zip">2021 Ortho JPG</a> <span style="font-size:14px;"><i>(</i></span><a target="_blank" rel="noopener noreferrer" href="https://www.cambridgema.gov/GIS/3D/3ddata/2021orthojpg"><span style="font-size:14px;"><i>Metadata</i></span></a><span style="font-size:14px;"><i>)</i></span>&nbsp;
+    <br>
+    <a target="_blank" rel="noopener noreferrer" href="https://cambmagisdata.blob.core.windows.net/camb3d2022/CAMB3D_{grid_col}{grid_row}_PNG_2021Ortho_png.zip">2021 Ortho PNG</a> <span style="font-size:14px;"><i>(</i></span><a target="_blank" rel="noopener noreferrer" href="https://www.cambridgema.gov/GIS/3D/3ddata/2021orthopng"><span style="font-size:14px;"><i>Metadata</i></span></a><span style="font-size:14px;"><i>)</i></span>&nbsp;
+    <br>
+    <br>
+    <span style="font-size:18px;"><strong>Terrain:</strong></span>&nbsp;
+    <br>
+    <a target="_blank" rel="noopener noreferrer" href="https://cambmagisdata.blob.core.windows.net/camb3d2022/CAMB3D_{grid_col}{grid_row}_Terrain_2018_OBJ.zip">2018 Terrain OBJ</a>&nbsp;
+    <br>
+    <span style="font-size:14px;">Metadata coming soon! </span><a target="_blank" rel="noopener noreferrer" href="https://www.cambridgema.gov/Departments/GIS/contact"><span style="font-size:14px;">Contact us</span></a><span style="font-size:14px;"> for more info.</span>
+</p>

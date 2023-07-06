@@ -1,0 +1,211 @@
+:root {
+  --calcite-footer-min-height: 0;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Calcite Theme Editor: https://esrips.github.io/calcite-theme-editor/ */
+
+.calcite-mode-light,
+.calcite-mode-dark,
+.app-theme {
+  color-scheme: light;
+  --calcite-mode-name: light;
+  --calcite-ui-brand: #1C6F09;
+  --calcite-ui-brand-hover: #165807;
+  --calcite-ui-brand-press: #114305;
+  /*--calcite-ui-text-1: #175408;*/
+  /*--calcite-ui-text-2: #185808;*/
+  /*--calcite-ui-text-3: #1C650A;*/
+  --calcite-ui-text-1: #020202;
+  --calcite-ui-text-2: #242424;
+  --calcite-ui-text-3: #464646;
+  --calcite-ui-text-highlight: #1C6F09;
+  --calcite-ui-text-inverse: #ffffff;
+  --calcite-ui-text-link: #165807;
+  --calcite-link-blue-underline: rgba(28, 111, 9, 0.5);
+  --calcite-ui-background: #F7F7F7;
+  --calcite-ui-foreground-1: #FFFFFF;
+  --calcite-ui-foreground-2: #F2F2F2;
+  --calcite-ui-foreground-3: #EDEDED;
+  --calcite-ui-inverse: #000000;
+  --calcite-ui-inverse-hover: #000000;
+  --calcite-ui-inverse-press: #000000;
+  --calcite-ui-border-1: #CACACA;
+  --calcite-ui-border-2: #D4D4D4;
+  --calcite-ui-border-3: #DFDFDF;
+  --calcite-ui-border-input: #959595;
+  --calcite-ui-icon-color: #1C6F09; /*currentColor;*/
+  --calcite-ui-info: #165807;
+  --calcite-ui-success: #308e29;
+  --calcite-ui-warning: #f1c21b;
+  --calcite-ui-danger: #D83020;
+  --calcite-ui-danger-hover: #A82B1E;
+  --calcite-ui-danger-press: #7C1D13;
+}
+
+
+.esri-widget,
+.esri-widget__heading,
+.esri-menu,
+.esri-popup__main-container,
+.esri-popup__header-container--button:hover,
+.esri-popup__pointer-direction {
+  color: var(--calcite-ui-text-2) !important;
+  background-color: var(--calcite-ui-foreground-1) !important;
+}
+
+.esri-button,
+.esri-input,
+.esri-popup__button,
+.esri-widget--button {
+  color: var(--calcite-ui-icon-color) !important;
+  background-color: var(--calcite-ui-foreground-1) !important;
+}
+
+.esri-layer-list__item {
+  border-color: var(--calcite-ui-border-2);
+  background-color: transparent !important;
+}
+
+.esri-basemap-layer-list .esri-widget__heading {
+  display: none;
+}
+
+
+header[slot="header"] {
+  padding: 0 0.5rem 0 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--calcite-ui-brand);
+}
+
+header calcite-action-bar {
+  align-items: center;
+}
+
+.application-logo {
+  margin: 0 1rem;
+}
+
+.application-title {
+  color: var(--calcite-ui-brand);
+}
+
+.application-icon {
+  margin-right: 0.5rem;
+}
+
+calcite-loader#app-loader {
+  --calcite-loader-size: 8rem;
+  align-self: center;
+  justify-self: center;
+}
+
+.content-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#center-container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#view-container {
+  padding: 0;
+  margin: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#formats-action-bar {
+  width: 100%;
+}
+
+#sketch-container {
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.esri-sketch__panel > .esri-sketch__tool-section:first-of-type {
+  display: none;
+}
+
+calcite-shell-panel {
+  --calcite-shell-panel-width: 420px;
+  --calcite-shell-panel-max-height: 70vh;
+}
+
+calcite-label[slot="footer"] {
+  --calcite-label-margin-bottom: 0;
+}
+
+#selected-index-grid-card {
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#selected-index-grid-label:empty:after {
+  content: "no index grids selected...";
+}
+
+#index-grid-list {
+  max-height: 40vh;
+}
+
+#index-grid-list:empty {
+  padding: 1rem;
+}
+
+#index-grid-list:empty:after {
+  content: "no index grids selected...";
+}
+
+#formats-list {
+  max-height: 40vh;
+}
+
+calcite-tabs {
+  margin-top: 0.5rem;
+}
+
+calcite-tab {
+  padding: 0;
+}
+
+calcite-tab-title {
+  --calcite-ui-icon-color: var(--calcite-ui-brand);
+}
+
+calcite-tab calcite-notice {
+  margin: 0.5rem;
+}
+
+calcite-button[appearance="solid"] {
+  --calcite-ui-icon-color: var(--calcite-ui-text-inverse);
+}
+
+calcite-button[kind="danger"] {
+  --calcite-ui-icon-color: var(--calcite-ui-danger);
+}

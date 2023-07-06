@@ -1,0 +1,18 @@
+{
+  "title": "City of Cambridge - 3D Data Download",
+  "description": "",
+  "portalUrl": "https://www.arcgis.com",
+  "oauthappid": null,
+  "authMode": "anonymous",
+  "apiKey": null,
+  "group": "",
+  "webmap": "a73322c497554649a81da71259c91edd",
+  "webscene": "",
+  "viewProps": {
+    "alphaCompositingEnabled": true
+  },
+  "container": "view-container",
+  "shareable": [
+    "embedded"
+  ]
+}

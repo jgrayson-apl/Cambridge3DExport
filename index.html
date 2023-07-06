@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0 maximum-scale=1.0"/>
+    <!-- ICON -->
+    <link rel="icon" href="./assets/favicon.ico" sizes="32x32" type="image/vnd.microsoft.icon">
+    <!-- TITLE -->
+    <title class="application-title"></title>
+    <!-- META -->
+    <!--<meta property="og:title" content="">-->
+    <!--<meta property="og:description" content="">-->
+    <!--<meta property="og:url" content="https://geoxc-apps.bd.esri.com/.../index.html">-->
+    <!--<meta property="og:image" content="https://geoxc-apps.bd.esri.com/.../assets/app.png">-->
+    
+    <!-- CALCITE -->
+    <script type="module" src="https://js.arcgis.com/calcite-components/1.4.2/calcite.esm.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.4.2/calcite.css"/>
+    
+    <!-- ArcGIS API for JavaScript-->
+    <link href="https://js.arcgis.com/4.27/@arcgis/core/assets/esri/themes/light/main.css" rel="stylesheet"/>
+    <script src="https://js.arcgis.com/4.27/"></script>
+    
+    <!-- APPLICATION -->
+    <link rel="stylesheet" type="text/css" href="./css/application.css">
+    <script type="module" src="./js/Application.js"></script>
+  </head>
+  <body class="calcite-mode-light">
+    <calcite-shell content-behind>
+      
+      <header class="content-row" slot="header">
+        <h2 class="content-row">
+          <img class="application-logo" src="./assets/logo-gis.png" height="44"> <span class="application-title"></span>
+        </h2>
+        <calcite-action-bar layout="horizontal" expand-disabled="true">
+          <calcite-action id="app-details-action" appearance="transparent" scale="m" title="app details..." text="app details" icon="information"></calcite-action>
+        </calcite-action-bar>
+      </header>
+      
+      <!-- CENTER -->
+      <div id="center-container">
+        <div id="view-container"></div>
+      </div>
+      
+      <calcite-shell-panel slot="panel-end" width-scale="m" display-mode="float">
+        
+        <calcite-block id="export-panel" heading="3D Data Download" description="Select the formats and areas of interest to download" collapsible>
+          <calcite-icon slot="icon" icon="download"></calcite-icon>
+          <calcite-tabs id="export-tabs" layout="center">
+            <calcite-tab-nav slot="title-group">
+              <calcite-tab-title icon-start="number-circle-1-f" tab="grids" selected>Index Grids</calcite-tab-title>
+              <calcite-tab-title icon-start="number-circle-2-f" tab="formats">File Formats</calcite-tab-title>
+              <calcite-tab-title icon-start="number-circle-3-f" tab="download">Download</calcite-tab-title>
+            </calcite-tab-nav>
+            
+            <calcite-tab tab="grids" selected>
+              <calcite-panel>
+                <calcite-notice icon="cursor-selection" open>
+                  <div slot="message">Use these tools to select the desired index grids to download</div>
+                  <calcite-action id="grids-clear-action" slot="actions-end" icon="trash"></calcite-action>
+                </calcite-notice>
+                <div id="sketch-container"></div>
+                <calcite-card id="selected-index-grid-card">
+                  <div slot="title">Selected Index Grids</div>
+                  <div id="selected-index-grid-label"></div>
+                </calcite-card>
+              </calcite-panel>
+            </calcite-tab>
+            
+            <calcite-tab tab="formats">
+              <calcite-panel>
+                <calcite-notice icon="files" open>
+                  <div slot="message">Select the desired file formats to download</div>
+                  <calcite-action id="formats-select-all-action" slot="actions-end" icon="list-check-all" title="select all"></calcite-action>
+                  <calcite-action id="formats-select-none-action" slot="actions-end" icon="list-bullet" title="select none"></calcite-action>
+                </calcite-notice>
+                <calcite-flow>
+                  <calcite-flow-item heading="File Formats">
+                    <calcite-list id="formats-list" selection-mode="multiple" selection-appearance="icon">
+                      <calcite-list-item-group heading="Building Models">
+                        <calcite-list-item label="SketchUp SKP" value="SketchUp SKP">
+                          <calcite-button slot="actions-end" appearance="outline-fill" scale="s" kind="neutral" round icon-end="information" href="https://www.cambridgema.gov/GIS/3D/3ddata/sketchupskp" target="_blank" rel="noopener noreferrer">metadata</calcite-button>
+                        </calcite-list-item>
+                        <calcite-list-item label="OBJ" value="OBJ">
+                          <calcite-button slot="actions-end" appearance="outline-fill" scale="s" kind="neutral" round icon-end="information" href="https://www.cambridgema.gov/GIS/3D/3ddata/objwavefrontobject" target="_blank" rel="noopener noreferrer">metadata</calcite-button>
+                        </calcite-list-item>
+                        <calcite-list-item label="FBX" value="FBX">
+                          <calcite-button slot="actions-end" appearance="outline-fill" scale="s" kind="neutral" round icon-end="information" href="https://www.cambridgema.gov/GIS/3D/3ddata/FBX" target="_blank" rel="noopener noreferrer">metadata</calcite-button>
+                        </calcite-list-item>
+                        <calcite-list-item label="GLTF" value="GLTF">
+                          <calcite-button slot="actions-end" appearance="outline-fill" scale="s" kind="neutral" round icon-end="information" href="https://www.cambridgema.gov/GIS/3D/3ddata/GLTF" target="_blank" rel="noopener noreferrer">metadata</calcite-button>
+                        </calcite-list-item>
+                      </calcite-list-item-group>
+                      <calcite-list-item-group heading="Ground Plans">
+                        <calcite-list-item label="Ground Plan DXF" value="Ground Plan DXF">
+                          <calcite-button slot="actions-end" appearance="outline-fill" scale="s" kind="neutral" round icon-end="information" href="https://www.cambridgema.gov/GIS/3D/3ddata/groundplandxf" target="_blank" rel="noopener noreferrer">metadata</calcite-button>
+                        </calcite-list-item>
+                        <calcite-list-item label="Ground Plan PNG" value="Ground Plan PNG">
+                          <calcite-button slot="actions-end" appearance="outline-fill" scale="s" kind="neutral" round icon-end="information" href="https://www.cambridgema.gov/GIS/3D/3ddata/groundplanpng" target="_blank" rel="noopener noreferrer">metadata</calcite-button>
+                        </calcite-list-item>
+                        <calcite-list-item label="2021 Ortho JPG" value="2021 Ortho JPG">
+                          <calcite-button slot="actions-end" appearance="outline-fill" scale="s" kind="neutral" round icon-end="information" href="https://www.cambridgema.gov/GIS/3D/3ddata/2021orthojpg" target="_blank" rel="noopener noreferrer">metadata</calcite-button>
+                        </calcite-list-item>
+                        <calcite-list-item label="2021 Ortho PNG" value="2021 Ortho PNG">
+                          <calcite-button slot="actions-end" appearance="outline-fill" scale="s" kind="neutral" round icon-end="information" href="https://www.cambridgema.gov/GIS/3D/3ddata/2021orthopng" target="_blank" rel="noopener noreferrer">metadata</calcite-button>
+                        </calcite-list-item>
+                      </calcite-list-item-group>
+                      <calcite-list-item-group heading="Terrain">
+                        <calcite-list-item label="2018 Terrain OBJ" value="2018 Terrain OBJ">
+                          <calcite-button slot="actions-end" appearance="outline-fill" scale="s" kind="danger" round icon-end="exclamation-mark-triangle" href="https://www.cambridgema.gov/Departments/GIS/contact" target="_blank" rel="noopener noreferrer" title="Metadata coming soon!">contact us</calcite-button>
+                        </calcite-list-item>
+                      </calcite-list-item-group>
+                    </calcite-list>
+                  </calcite-flow-item>
+                </calcite-flow>
+              </calcite-panel>
+            </calcite-tab>
+            
+            <calcite-tab tab="download">
+              <calcite-panel>
+                <calcite-notice icon="download" open>
+                  <div slot="message">Download individual files, all files for a grid, or all files for all grids.</div>
+                </calcite-notice>
+                <calcite-flow id="index-grid-flow">
+                  <calcite-flow-item heading="Selected Index Grids">
+                    <calcite-list id="index-grid-list" disabled></calcite-list>
+                    <calcite-button id="download-all-btn" slot="footer" icon-end="download" scale="l" round disabled>All files for all selected Grids</calcite-button>
+                  </calcite-flow-item>
+                </calcite-flow>
+              </calcite-panel>
+            </calcite-tab>
+          
+          </calcite-tabs>
+        </calcite-block>
+      </calcite-shell-panel>
+      
+      
+      <!-- SHAREABLE ALERT -->
+      <calcite-alert id="app-share-alert" slot="alerts" kind="success" icon="launch" placement="bottom" auto-close auto-close-duration="medium">
+        <div slot="message">Shareable link has been copied to the clipboard.</div>
+        <calcite-link slot="link" href="#" target="_blank" role="link" title="open in new tab">open in new tab</calcite-link>
+      </calcite-alert>
+      
+      <!-- NOTICES ADN ALERTS -->
+      <calcite-alert id="app-notice" slot="alerts" kind="danger" placement="bottom" width="auto">
+        <div slot="title"></div>
+        <div slot="message"></div>
+      </calcite-alert>
+      
+      <!-- APP DETAILS MODAL -->
+      <calcite-modal id="app-details-modal" slot="modals" kind="brand" scale="m" width="m" aria-labelledby="app-modal-title">
+        <h3 slot="header" id="app-modal-title" class="application-title"></h3>
+        <div slot="content">
+          <p>
+          This interactive map is designed to allow you to find and download 3D data for the City of Cambridge. The City has been divided into a grid system allowing for users to download 3D data for a specific area. You can search for a specific address or simply zoom to your area of interest. Click on the grid block and choose the file type(s) you would like to download.
+          </p>
+          <p>
+          Looking for GIS data? You can download a full, citywide
+          <calcite-link href="https://www.cambridgema.gov/GIS/3D/3ddata/esrishapefile" target="_blank">ESRI Shapefile</calcite-link>
+          for use in ESRI applications.
+          </p>
+          <p>
+          We'd love to hear from you! If you love our 3D Data Download map or have suggestions on how to improve, please let us know.
+          <calcite-link href="https://www.cambridgema.gov/Departments/GIS/contact" target="_blank">Contact Us</calcite-link>
+          and let us know how you found our map and what project(s) you are working on. Thanks for supporting our Cambridge 3D Program.
+          </p>
+        </div>
+        <div slot="secondary">
+          <calcite-label layout="inline">
+            <span>hide on startup</span>
+            <calcite-checkbox id="hide-startup-checkbox"></calcite-checkbox>
+          </calcite-label>
+        </div>
+        <calcite-button id="app-details-ok-btn" slot="primary" width="full" hidden>OK</calcite-button>
+      </calcite-modal>
+    
+    </calcite-shell>
+    
+    <!-- LOADER -->
+    <calcite-loader id="app-loader" type="indeterminate" scale="l" text="...loading..."></calcite-loader>
+    
+    <!-- GRID ITEM TEMPLATE -->
+    <template id="grid-item-template">
+      <calcite-list-item label="" value="">
+        <calcite-icon slot="content-start" scale="s" icon="files"></calcite-icon>
+        <calcite-button slot="actions-end" scale="s" appearance="outline-fill" kind="neutral" icon-end="download" round>all files for Grid</calcite-button>
+      </calcite-list-item>
+    </template>
+  
+  </body>
+</html>
